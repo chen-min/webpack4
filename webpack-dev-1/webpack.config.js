@@ -33,9 +33,18 @@ module.exports = {
             {test: /\.css$/,use:[{
                 loader: 'style-loader',
                 options:{
+                    insertAt: 'top' //插入最上面, 优先级高
                 }
-            }, 'css-loader']}
-
+            }, 'css-loader']},
+            //处理less文件
+            {test: /\.less$/,use:[{
+                loader: 'style-loader',
+                options:{
+                    insertAt: 'top' //插入最上面, 优先级高
+                }
+            }, 'css-loader', 'less-loader']}
+            //安装 less  和 less-loader
+            //处理sass node-sass, sass-loader包
         ]
     }
 
